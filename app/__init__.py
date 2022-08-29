@@ -23,7 +23,6 @@ def create_app(test_config=None):
     def hello():
         return render_template('index.jinja2', title='index page')
 
-    from .main import main
     from .public_normal import public_normal
     from .public_special_married import public_special_married
     from .public_special_first import public_special_first
@@ -44,8 +43,6 @@ def create_app(test_config=None):
     from .private_priority_complex import private_priority_complex
     from .private_priority_integration import private_priority_integration
 
-
-    app.register_blueprint(main.bp)
     app.register_blueprint(public_normal.bp)
     app.register_blueprint(public_special_married.bp)
     app.register_blueprint(public_special_first.bp)
